@@ -1,0 +1,26 @@
+@media screen and (max-width: 600px) {
+#serb{
+    width: 140px important;
+    }
+}
+    
+@media screen and (min-width: 600px) {
+    
+#serb{
+    width: 100%;
+    }
+}
+
+
+
+body {
+    background-color: #e72626 !important;
+}
+
+.row {
+ background-color: aqua;
+}
+
+.container {
+    background-color: #46e726 !important;
+}
