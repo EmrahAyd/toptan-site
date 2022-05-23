@@ -3,14 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/script.js"></script>
     <link rel="stylesheet" href="/stil.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image carousel 2.0</title>
+    <script src="https://kit.fontawesome.com/3569aa9baa.js" crossorigin="anonymous"></script>
+
+
 
     <nav class="navbar navbar-expand-lg bg-light" style="margin:10px ;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <a class="navbar-brand" href="#">
+            <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            <strong>J</strong>anes
+          </a>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
@@ -42,33 +50,112 @@
         </div>
       </nav>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https:cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
   <body>
 <div class="container">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, eos assumenda. Doloribus, natus cum!
-    <div class="row">
-        <div class="col-sm-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, commodi.
-        </div>
-        <div class="col-sm-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus odit eum hic amet error nostrum?
-        </div>
         <div class="row">
-            <div class="col-sm-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            <div class="col-sm-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/ban.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="/ban.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Second slide label</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="/ban.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+              </div>
             </div>
-            <div class="col-sm-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-sm-6"> <img src="/2.jpg" class="d-block w-100" alt="..."> </div>
+          <div class="col-sm-6"><img src="/3.jpg" class="d-block w-100" alt="..."> </div>
+        </div>
+
+        <!-- slides -->
+        <div class="row">
+           <div class="slider-container">
+        <div class="left-slides">
+            <div style="background-color: #353b48;">
+                <h3>T-shirt</h3>
+                <p>sezon modası</p>
             </div>
+
+            <div style="background-color: #be2edd;">
+                <h3>Elbise</h3>
+                <p>rengarek</p>
+            </div>
+
+            <div style="background-color: #4bcffa;">
+                <h3>Takım</h3>
+                <p>kombin</p>
+            </div>
+
+            <div style="background-color: #218c74;">
+                <h3>Bluz</h3>
+                <p>rahatlık</p>
+            </div>
+
+            <div style="background-color: #ff7f50;">
+                <h3>Abiye</h3>
+                <p>Sunset at Clingmans Dome.</p>
+            </div>
+        </div>
+
+        <div class="right-slides">
+            <div style="background-image: url('https://modayakamoz.com/orj/6f7f89f7541d8854e4fa1ef07bcf7be6.jpg');">
+            </div>
+
+            <div style="background-image: url('https://modayakamoz.com/orj/d937fb7a3c54eaedfcbc457dbefc219f.jpg');">
+            </div>
+
+            <div style="background-image: url('https://modayakamoz.com/orj/31668-2022-05-19-10-16-19.jpeg');">
+            </div>
+
+            <div style="background-image: url('https://modayakamoz.com/orj/e7369af3251225c00da4694c6b4f65d2.jpg');">
+            </div>
+
+            <div style="background-image: url('https://modayakamoz.com/orj/88334b948c539797e2332527f506430f.jpeg');">
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="left-btn">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+            <button class="right-btn">
+                <i class="fas fa-arrow-up"></i>
+            </button>
         </div>
     </div>
+
+    <script src="./js/app.js"></script>
 </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https:cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>
