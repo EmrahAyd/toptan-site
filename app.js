@@ -1,55 +1,7 @@
 // Script Goes Here...
-const leftSlide = document.querySelector(".left-slides");
-const rightSlide = document.querySelector(".right-slides");
-const leftBtn = document.querySelector(".left-btn");
-const rightBtn = document.querySelector(".right-btn");
-const slidesLength = leftSlide.querySelectorAll("div").length;
 
-let currentSlide = 0;
-
-rightSlide.style.transform = `translateY(-${(slidesLength - 1) * 100}%)`;
-
-leftBtn.addEventListener("click", () => changeSlide("left"));
-rightBtn.addEventListener("click", () => changeSlide("right"));
-
-function changeSlide(btn) {
-  if (btn == "right") {
-    currentSlide++;
-
-    if (currentSlide > slidesLength - 1) {
-      currentSlide = 0;
-    }
-  } else if (btn == "left") {
-    currentSlide--;
-
-    if (currentSlide < 0) {
-      currentSlide = slidesLength - 1;
-    }
-  }
-
-  rightSlide.style.transform = `translateY(-${
-    (slidesLength - 1 - currentSlide) * 100
-  }%)`;
-  leftSlide.style.transform = `translateY(-${currentSlide * 100}%)`;
-}
-
-setInterval(autoChangeSlide, 3000);
-
-function autoChangeSlide() {
-
-  currentSlide++;
-
-  if (currentSlide > slidesLength - 1) {
-    currentSlide = 0;
-  }
-
-  rightSlide.style.transform = `translateY(-${
-    (slidesLength - 1 - currentSlide) * 100
-  }%)`;
-  leftSlide.style.transform = `translateY(-${currentSlide * 100}%)`;
-}
 document.getElementById('tur').onclick = 
-function turk(){console.log("turk");
+async function turk(){console.log("turk");
 document.querySelector(".cev1").innerHTML = "Anasayfa";
 document.querySelector(".cev2").innerHTML = "Link";
 document.querySelector(".cev3").innerHTML = "Dil Seçenekleri";
@@ -92,7 +44,7 @@ document.querySelector(".cev33").innerHTML = "Bağlantılar";
 }
 
 document.getElementById('eng').onclick = 
-function engi(){console.log("eng");
+async function engi(){console.log("eng");
 document.querySelector(".cev1").innerHTML = "Home";
 document.querySelector(".cev2").innerHTML = "Link";
 document.querySelector(".cev3").innerHTML = "Language";
@@ -135,7 +87,7 @@ document.querySelector(".cev33").innerHTML = "Quick Links";
 }
 
 document.getElementById('arabi').onclick = 
-function changer(){console.log("arabi");
+async function changer(){console.log("arabi");
 document.querySelector(".cev1").innerHTML = "الصفحة الرئيسية";
 document.querySelector(".cev2").innerHTML = "وصلة";
 document.querySelector(".cev3").innerHTML = "لغة";
@@ -172,10 +124,60 @@ document.querySelector(".cev33").innerHTML = "الروابط";
 
 
 
-
-
 }
 
+
+                                  const leftSlide = document.querySelector(".left-slides");
+                                  const slidesLength = leftSlide.querySelectorAll("div").length; 
+                              const rightSlide = document.querySelector(".right-slides");
+                              const leftBtn = document.querySelector(".left-btn");
+                              const rightBtn = document.querySelector(".right-btn");
+
+
+                              let currentSlide = 0;
+
+                              rightSlide.style.transform = `translateY(-${(slidesLength - 1) * 100}%)`;
+
+                              leftBtn.addEventListener("click", () => changeSlide("left"));
+                              rightBtn.addEventListener("click", () => changeSlide("right"));
+
+                              function changeSlide(btn) {
+                                if (btn == "right") {
+                                  currentSlide++;
+
+                                  if (currentSlide > slidesLength - 1) {
+                                    currentSlide = 0;
+                                  }
+                                } else if (btn == "left") {
+                                  currentSlide--;
+
+                                  if (currentSlide < 0) {
+                                    currentSlide = slidesLength - 1;
+                                  }
+                                }
+
+                                rightSlide.style.transform = `translateY(-${
+                                  (slidesLength - 1 - currentSlide) * 100
+                                }%)`;
+                                leftSlide.style.transform = `translateY(-${currentSlide * 100}%)`;
+                              }
+
+                              setInterval(autoChangeSlide, 3000);
+
+                              function autoChangeSlide() {
+
+                                currentSlide++;
+
+                                if (currentSlide > slidesLength - 1) {
+                                  currentSlide = 0;
+                                }
+
+                                rightSlide.style.transform = `translateY(-${
+                                  (slidesLength - 1 - currentSlide) * 100
+                                }%)`;
+                                leftSlide.style.transform = `translateY(-${currentSlide * 100}%)`;
+                              }
+// let urun = []
 // let xml
 // fetch("http://modayakamoz.com/xml/sena")
 // .then(res=>res.text())
@@ -184,5 +186,33 @@ document.querySelector(".cev33").innerHTML = "الروابط";
 //   xml = parser.parseFromString(data, "application/xml");
 
 //   xml = xml.getElementsByTagName("Urun");
-//   console.log(xml);
-// });
+//   for(let i =1; i<xml.length; i++){
+//     let pi= xml[i].childNodes[1].textContent
+//     let pii = xml[i].childNodes[39].childNodes[1].textContent
+//     let piii = xml[i].childNodes[3].textContent
+//     let piiii = xml[1].childNodes[41].childNodes[1].childNodes[9].textContent*1
+
+//   urun.push({stok:pi, urunadi:piii, resim:pii, fiyat: piiii })
+//   localStorage.setItem("urun", JSON.stringify(urun))
+// }
+  
+
+  
+//   })
+
+
+productsList = []
+
+for (let i = 0; i < xml.length; i++) {
+  let pusher = {}
+  let vi = xml[1].children[0].textContent;
+  let name = xml[1].children[2].textContent;
+  let kategori = xml[1].children[8].textContent;
+  let images = xml[1].children[19].children[0].textContent;
+  
+  pusher = {UrunKodu: vi, UrunAdi: name, Kategori: kategori, Resim: images}
+  productsList.push(pusher)
+  
+}
+
+

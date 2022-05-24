@@ -2,6 +2,9 @@
 #serb{
     width: 140px important;
     }
+    .card{
+        width: 300px !important;
+    }
 
     .left-slides{
         position: absolute;

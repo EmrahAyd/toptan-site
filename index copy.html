@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stil.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image carousel 2.0</title>
+    <script src="https://kit.fontawesome.com/3569aa9baa.js" crossorigin="anonymous"></script>
+
+
+
+    <nav class="navbar navbar-expand-lg bg-light" style="z-index: 900;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><strong>J</strong>anes</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active cev1" aria-current="page" href="#">Anasayfa</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link cev2" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle cev3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dil Ayarı <i class="fas fa-language"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" id="tur"  onclick="turk()">Türkçe <img src="/tur.webp" width="18%" alt=""></a></li>
+                <li><a class="dropdown-item"id="arabi" onclick="changer()">  عربي <img src="/arb.webp" width="18%" alt=""></a></li>
+                <li><a class="dropdown-item"id="eng"  onclick="engi()" >English <img src="/eng.webp" width="18%" alt=""></a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled cev4">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input id="serb" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success cev5" type="submit">Ara</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    
+    <link href="https:cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <style>
+      .card{
+        margin: 15px;
+      }
+    </style>
+
+
+
+<div class="container mt-5 ">
+  <button type="button" class="btn btn-primary btn-lg text-center mt-5" onclick="elbise()">Elbiseler</button>  <button type="button" class="btn btn-primary btn-lg text-center mt-5" onclick="bluz()">Bluzler</button>
+
+  <div class="row mt-5 kategoris" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>  
+</div>     
+
+      <script src="productList.js"></script>
+      <script>
+
+
+        let urun = []
+        let xml
+        fetch("http://modayakamoz.com/xml/sena")
+        .then(res=>res.text())
+        .then(data=>{
+          let parser = new DOMParser();
+          xml = parser.parseFromString(data, "application/xml");
+
+          xml = xml.getElementsByTagName("Urun");
+
+
+          productsList = []
+
+  for (let i = 0; i < xml.length; i++) {
+  let pusher = {}
+  let vi = xml[i].children[0].textContent;
+  let name = xml[i].children[2].textContent;
+  let kategori = xml[i].children[8].textContent;
+  let images = xml[i].children[19].children[0].textContent;
+  let fiyat = xml[i].childNodes[41].childNodes[1].childNodes[9].textContent*1
+  
+  pusher = {UrunKodu: vi, UrunAdi: name, Kategori: kategori, Resim: images, Fiyat: fiyat}
+  productsList.push(pusher)
+  
+  }
+
+  //         for(let i =1; i<xml.length; i++){
+  //           let pi= xml[i].childNodes[1].textContent
+  //           let pii = xml[i].childNodes[39].childNodes[1].textContent
+  //           let piii = xml[i].childNodes[3].textContent
+  //           let piiii = xml[i].childNodes[41].childNodes[1].childNodes[9].textContent*1
+
+            
+         
+          
+       
+         
+  //        let crtr = document.createElement("div");
+  //        crtr.setAttribute("class","col-md-3 col-sm-6 col-xs-6 col-lg-3 col-xl-3");
+  //        crtr.innerHTML = `<div class="card text-center" style="max-height: 560px; width: 18rem;"> <img src="` + pii + `" class="card-img-top" max alt="..."><div class="card-body"><h5 class="card-title text-center">` + piii + `</h5><p class="card-text text-center">` + piiii + ` TL</p>
+  //        <a href="#" class=" btn btn-primary ">Sipariş ver!</a>
+  //      </div>
+  //      </div></div>`;
+  //      document.querySelector('.kategoris').appendChild(crtr);
+ 
+
+  //       }  
+  // })
+
+      // function elbise(){
+      //   document.querySelector('.kategoris').innerHTML = ""
+      //   for (let i = 0; i < productsList.length; i++) {
+      //     if(productsList[i].Kategori == "Elbise"){
+      //       let crtr = document.createElement("div");
+      //    crtr.setAttribute("class","col-md-3 col-sm-6 col-xs-6 col-lg-3 col-xl-3");
+      //    crtr.innerHTML = `<div class="card text-center" style="max-height: 560px; width: 18rem;"> <img src="` + productsList[i].Resim + `" class="card-img-top" max alt="..."><div class="card-body"><h5 class="card-title text-center">` + productsList[i].UrunAdi + `</h5><p class="card-text text-center">` + productsList[i].Fiyat + ` TL</p>
+      //    <a href="#" class=" btn btn-primary ">Sipariş ver!</a>
+      //  </div>
+      //  </div></div>`;
+      //  document.querySelector('.kategoris').appendChild(crtr);
+      //     }
+          
+      //   }
+      // }
+
+      // function bluz(){
+      //   document.querySelector('.kategoris').innerHTML = ""
+      //   for (let i = 0; i < productsList.length; i++) {
+      //     if(productsList[i].Kategori == "Bluz"){
+      //       let crtr = document.createElement("div");
+      //    crtr.setAttribute("class","col-md-3 col-sm-6 col-xs-6 col-lg-3 col-xl-3");
+      //    crtr.innerHTML = `<div class="card text-center" style="max-height: 560px; width: 18rem;"> <img src="` + productsList[i].Resim + `" class="card-img-top" max alt="..."><div class="card-body"><h5 class="card-title text-center">` + productsList[i].UrunAdi + `</h5><p class="card-text text-center">` + productsList[i].Fiyat + ` TL</p>
+      //    <a href="#" class=" btn btn-primary ">Sipariş ver!</a>
+      //  </div>
+      //  </div></div>`;
+      //  document.querySelector('.kategoris').appendChild(crtr);
+      //     }
+          
+      //   }
+      // }
+
+
+      </script>
+
+
+
+    <script src="/app.js"></script>
+
+
+            <footer class="site-footer">
+              <div class="container" >
+                <div class="row" >
+                  <div class="col-sm-12 col-md-6">
+                    <h6 class="cev26" >Hakkımızda</h6>
+                    <p class="text-justify cev27">ABD, Avrupa veya diğer 100'den fazla ülkede En Ucuz ve En Son Moda Kadın Giyim ürünlerini çevrimiçi toptan satış yapmak ister misiniz? İster bir butik mağaza, ister çevrimiçi perakendeci olun, klasikten modayı takip eden tarzlara, resmi işlerden gündelik tarzlara, Janes'de 50.000'den fazla benzersiz ve modaya uygun bayan giyim tarzı, toplu satın alma için ilk tercihiniz olacak! En iyi satıcı olarak, her mevsime veya duruma uygun en yeni şık kadın kıyafetlerini toptan satışa sunuyoruz. Yaza gelindiğinde kadın giyim pazarında en çok ne konuşuluyor? Seksi Mayo vazgeçilmezdir. Klasik Tek Parçalar veya Örtüler, Bikiniler, hatta Büyük Beden Mayoların tümü web sitelerimizde mevcuttur. Plaj Giysileri ve Mayoların tüm günlük güncellemeleri, trend stilleri, renkleri ve boyutları işletmenizi tatmin edecek. Çiçek Desenli Elbise veya Gömlek Elbise de yaz tutkusuna çok yakışıyor. Müşterinizin özel bir etkinliğe katılması gerekiyorsa, ona zarif bir Abiye veya şık bir Parti Elbisesi sunun. Bunun yanı sıra gündelik kadın giyimi de oldukça popülerdir. Hem Kabarık Kol Bayan Üstler, İş Butik Bluzlar, Baskı T-shirt, hem de Şeffaf Kumaş Bayan Spor Sütyen veya Şortlar, Janes'de en son stilleri toptan tek elden yapabilirsiniz.</p>
+                  </div>
+
+                  <div class="col-xs-6 col-md-3">
+                    <h6 class="cev28">Kategoriler</h6>
+                    <ul class="footer-links">
+                      <li><a href="/" class="cev29">Bluz</a></li>
+                      <li><a href="/" class="cev30">Pantalon</a></li>
+                      <li><a href="/" class="cev31">Elbise</a></li>
+                      <li><a href="/" class="cev32">Takım</a></li>
+
+                    </ul>
+                  </div>
+
+                  <div class="col-xs-6 col-md-3">
+                    <h6 class="cev33">Bağlantılar</h6>
+                    <ul class="footer-links">
+                      <li><a href="https://modayakamoz.net/">ModaYakamoz</a></li>
+                      <li><a href="https://www.viyamo.com/">Viyamo</a></li>
+                      <li><a href="https://www.modablask.com/">ModaBlask</a></li>
+
+                    </ul>
+                  </div>
+                </div>
+                <hr>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+                <a href="#">Janes</a>.
+                    </p>
+                  </div>
+
+                  <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                      <li><a class="facebook" href="https://www.facebook.com/janestoptan"><i class="fa fa-facebook"></i></a></li>
+                      <li><a class="twitter" href="https://www.instagram.com/janescollectionn/"><i class="fa fa-instagram"></i></a></li>
+                      <!-- <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                      <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>    -->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </footer>
+
+    <script src="https:cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+  
+
+     
+</html>
