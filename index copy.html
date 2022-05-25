@@ -53,66 +53,104 @@
     <link href="https:cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
   <body>
-
-    <style>
-      .card{
-        margin: 15px;
-      }
-    </style>
-
-
-
 <div class="container mt-5 ">
   <button type="button" class="btn btn-primary btn-lg text-center mt-5" onclick="elbise()">Elbiseler</button>  <button type="button" class="btn btn-primary btn-lg text-center mt-5" onclick="bluz()">Bluzler</button>
 
   <div class="row mt-5 kategoris" >
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>  
 </div>     
 
-      <script src="productList.js"></script>
       <script>
 
 
-        let urun = []
-        let xml
-        fetch("http://modayakamoz.com/xml/sena")
-        .then(res=>res.text())
-        .then(data=>{
-          let parser = new DOMParser();
-          xml = parser.parseFromString(data, "application/xml");
+        // let urun = []
+        // let xml
+        // fetch("http://modayakamoz.com/xml/sena")
+        // .then(res=>res.text())
+        // .then(data=>{
+        //   let parser = new DOMParser();
+        //   xml = parser.parseFromString(data, "application/xml");
 
-          xml = xml.getElementsByTagName("Urun");
+        //   xml = xml.getElementsByTagName("Urun");
 
 
-          productsList = []
+          productsList = [{UrunKodu: '32823', UrunAdi: 'Kruvaze Yaka Janes Aerobin Kumaş Kuşaklı Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/4e4e41fdf0673c742579a212cec668c2.jpeg', Fiyat: 189.9}
+      ,{UrunKodu: '32822', UrunAdi: 'Kruvaze Yaka Janes Aerobin Kumaş Kuşaklı Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/7b36d9aee6e614392d320511e6a84d4b.jpeg', Fiyat: 189.9}
+      ,{UrunKodu: '32821', UrunAdi: 'Kruvaze Yaka Janes Aerobin Kumaş Kuşaklı Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/70407ac53c922b8ba74f1069b3a76788.jpeg', Fiyat: 189.9}
+      ,{UrunKodu: '32820', UrunAdi: 'Kayık Yaka Yaka Inci Taş Işlemeli Viskon Salaş Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31820-2022-05-24-08-45-46.jpeg', Fiyat: 159.9}
+      ,{UrunKodu: '32819', UrunAdi: 'Leopar şerit Yaka Ve Kol Detay Krep Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31819-2022-05-24-08-43-29.jpeg', Fiyat: 149.9}
+      ,{UrunKodu: '32818', UrunAdi: 'Eteği Asimetrik Kesim Dik Yaka Mini Krep Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31818-2022-05-24-08-40-34.jpeg', Fiyat: 249.9}
+      ,{UrunKodu: '32817', UrunAdi: 'Sıfır Kol V Yaka önü Düğme Detay Aerobin Kumaş Kuşaklı Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31817-2022-05-24-08-37-28.jpeg', Fiyat: 219.9}
+      ,{UrunKodu: '32816', UrunAdi: 'Sıfır Kol V Yaka önü Düğme Detay Aerobin Kumaş Kuşaklı Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31816-2022-05-24-08-36-39.jpeg', Fiyat: 219.9}
+      ,{UrunKodu: '32815', UrunAdi: 'İthal Likralı Dalgıç Krep Ve Tül Kumaş Sırt Gizli …öğüs Gloplu Zincir Detaylı Mini Transparan Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/34fcf759958a225d5cc207ad1646cf2b.jpg', Fiyat: 249.9}
+      ,{UrunKodu: '32814', UrunAdi: 'Alt Iki Iplik üst Sandy Kumaş Yanı şeritli Askılı Takım', Kategori: 'Takım', Resim: 'https://www.modayakamoz.com/orj/1b074ced78313e0d03949c7bf47f4628.jpg', Fiyat: 209.9}
+      ,{UrunKodu: '32805', UrunAdi: 'Çapraz Gold Bantlı Viskon Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31805-2022-05-23-14-28-29.jpeg', Fiyat: 59.9}
+      ,{UrunKodu: '32804', UrunAdi: 'Desenli Keten Kumaş Kolsuz Elbise (M-L-XL-2XL-3XL)', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31804-2022-05-23-14-28-15.jpeg', Fiyat: 269.9}
+      ,{UrunKodu: '32803', UrunAdi: 'Çapraz Gold Bantlı Viskon Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31803-2022-05-23-14-26-57.jpeg', Fiyat: 59.9}
+      ,{UrunKodu: '32802', UrunAdi: 'Viskon Kumaş Askılı Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31802-2022-05-23-14-22-40.jpeg', Fiyat: 69.9}
+      ,{UrunKodu: '32801', UrunAdi: 'Viskon Kumaş Askılı Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31801-2022-05-23-14-19-46.jpeg', Fiyat: 69.9}
+      ,{UrunKodu: '32799', UrunAdi: 'Atlas Duble Kumaş Geniş Paça Efsane Palazo Pantolon', Kategori: 'Pantolon', Resim: 'https://www.modayakamoz.com/orj/1ad4d67f1a99ae4d7397467f51273757.jpg', Fiyat: 189.9}
+      ,{UrunKodu: '32798', UrunAdi: 'Üst Viskon Alt Krep çiçek Desen Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31798-2022-05-23-11-59-24.jpeg', Fiyat: 199.9}
+      ,{UrunKodu: '32797', UrunAdi: 'Üst Viskon Alt Krep çiçek Desen Elbise', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31797-2022-05-23-11-55-47.jpeg', Fiyat: 199.9}
+      ,{UrunKodu: '32796', UrunAdi: 'Üst Viskon Alt Krep çiçek Desen Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31796-2022-05-23-11-54-43.jpeg', Fiyat: 199.9}
+      ,{UrunKodu: '32795', UrunAdi: 'Üst Viskon Alt Krep çiçek Desen Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31795-2022-05-23-11-52-17.jpeg', Fiyat: 199.9}
+      ,{UrunKodu: '32794', UrunAdi: 'Üst Viskon Alt Krep çiçek Desen Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31794-2022-05-23-11-50-45.jpeg', Fiyat: 199.9}
+      ,{UrunKodu: '32793', UrunAdi: 'Üst Viskon Alt Krep çiçek Desen Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31793-2022-05-23-11-48-35.jpeg', Fiyat: 199.9}
+      ,{UrunKodu: '32792', UrunAdi: 'Askılı Yırtmaçlı Sırt Dekolteli Krep Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31792-2022-05-23-10-58-10.jpeg', Fiyat: 179.9}
+      ,{UrunKodu: '32791', UrunAdi: 'Askılı Yırtmaçlı Sırt Dekolteli Krep Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31791-2022-05-23-10-54-25.jpeg', Fiyat: 179.9}
+      ,{UrunKodu: '32790', UrunAdi: 'Askısı Zincir Detay Triko Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31790-2022-05-23-10-40-22.jpeg', Fiyat: 119.9}
+      ,{UrunKodu: '32787', UrunAdi: 'Kaşkorse Kumaş Büstiyer Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31787-2022-05-23-10-06-38.jpeg', Fiyat: 59.9}
+      ,{UrunKodu: '32786', UrunAdi: 'Kaşkorse Kumaş Büstiyer Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31786-2022-05-23-10-05-16.jpeg', Fiyat: 59.9}
+      ,{UrunKodu: '32785', UrunAdi: 'Askılı Omuzlar Açık Kısa Kollu önü Fermuar Detay Kaşkorse Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31785-2022-05-23-09-55-33.jpeg', Fiyat: 99.9}
+      ,{UrunKodu: '32784', UrunAdi: 'Askılı Omuzlar Açık Kısa Kollu önü Fermuar Detay Kaşkorse Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31784-2022-05-23-09-54-06.jpeg', Fiyat: 99.9}
+      ,{UrunKodu: '32783', UrunAdi: 'Askılı Omuzlar Açık Kısa Kollu önü Fermuar Detay Kaşkorse Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31783-2022-05-23-09-53-01.jpeg', Fiyat: 99.9}
+      , {UrunKodu: '32769', UrunAdi: 'Askılı Fitilli Kaşkorse Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31769-2022-05-22-14-52-57.jpeg', Fiyat: 119.9}
+      , {UrunKodu: '32768', UrunAdi: 'Askılı Fitilli Kaşkorse Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31768-2022-05-22-14-52-10.jpeg', Fiyat: 119.9}
+      , {UrunKodu: '32767', UrunAdi: 'Askılı Fitilli Kaşkorse Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31767-2022-05-22-14-51-21.jpeg', Fiyat: 119.9}
+      , {UrunKodu: '32760', UrunAdi: 'İthal Likralı Sandy Kumaş Sırt Dekolteli önden Yırtmaçlı Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/66744f3737bbba7c643f4cd23c433226.jpg', Fiyat: 159.9}
+      , {UrunKodu: '32759', UrunAdi: 'İthal Likralı Sandy Kumaş Sırt Dekolteli önden Yırtmaçlı Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/8ce2f3eb41272635f88fa0ded7b72a88.jpg', Fiyat: 159.9}
+      , {UrunKodu: '32756', UrunAdi: 'Etnik Desen Askılı Asimetrik Kesim Viskon Kumaş Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/01a8c384d41f47fbdf3227985e71504e.jpg', Fiyat: 89.9}
+      , {UrunKodu: '32754', UrunAdi: 'Eteği Puantiyeli Üst Viskon Alt Krep Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31754-2022-05-22-11-44-52.jpeg', Fiyat: 239.9}
+      , {UrunKodu: '32753', UrunAdi: 'Etnik Desen Askılı Asimetrik Kesim Viskon Kumaş Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/dbe069402daad99ef8fa7ce10bf44171.jpg', Fiyat: 89.9}
+      , {UrunKodu: '32751', UrunAdi: 'Etnik Desen Askılı Asimetrik Kesim Viskon Kumaş Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/adb6e6c5be3c2c74a8263d2c6b9fc0b8.jpg', Fiyat: 89.9}
+      , {UrunKodu: '32747', UrunAdi: 'Kamuflaj Desen V Yaka İki İplik Kumaş Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31747-2022-05-22-10-32-15.jpeg', Fiyat: 149.9}
+      , {UrunKodu: '32746', UrunAdi: 'Yanı Ve önü şerit Detay, V Yaka Iki Iplik Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31746-2022-05-22-10-29-12.jpeg', Fiyat: 169.9}
+      , {UrunKodu: '32742', UrunAdi: 'Kolları çapraz şerit Detay Viskon Kumaş Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31742-2022-05-21-14-51-33.jpeg', Fiyat: 99.9}
+      , {UrunKodu: '32739', UrunAdi: 'Kelebek Detay Sandy Kumaş Omuz Detay Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31739-2022-05-21-14-40-47.jpeg', Fiyat: 109.9}
+      , {UrunKodu: '32731', UrunAdi: 'Papatya Desen Askılı Krep Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31731-2022-05-22-09-53-33.jpeg', Fiyat: 189.9}
+      , {UrunKodu: '32730', UrunAdi: 'İnce Askılı Triko Pareo', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31730-2022-05-21-11-53-02.jpeg', Fiyat: 109.9}
+      , {UrunKodu: '32729', UrunAdi: 'İnce Askılı Triko Pareo', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31729-2022-05-21-11-52-22.jpeg', Fiyat: 109.9}
+      , {UrunKodu: '32714', UrunAdi: 'İthal Mikro Kumaş Güpür Detaylı Salaş Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/33eb092a5160fa872ad321539bc3409a.jpg', Fiyat: 179.9}
+      , {UrunKodu: '32704', UrunAdi: 'Askı Detay Eteği Volanlı Micro Kumaş Batik Elbise 83cm', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/7219205dace21aec28d7eb11c938049a.jpeg', Fiyat: 129.9}
+      , {UrunKodu: '32698', UrunAdi: 'Sırt Dekolteli Suprem Kumaş T-shirt', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/77236d916bb9574852259ed2bb525d52.jpg', Fiyat: 109.9}
+      , {UrunKodu: '32697', UrunAdi: 'Sırt Dekolteli Suprem Kumaş T-shirt', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/c2bc734a171eae118d37d0e78f8655ac.jpg', Fiyat: 109.9}
+      , {UrunKodu: '32693', UrunAdi: 'Taş Işlemeli Viskon Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31693-2022-05-20-08-50-06.jpeg', Fiyat: 169.9}
+      , {UrunKodu: '32692', UrunAdi: 'Taş Işlemeli Viskon Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31692-2022-05-20-08-49-22.jpeg', Fiyat: 169.9}
+      , {UrunKodu: '32691', UrunAdi: 'Taş Işlemeli Viskon Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31691-2022-05-20-08-48-33.jpeg', Fiyat: 169.9}
+      , {UrunKodu: '32690', UrunAdi: 'V Yaka Kolsuz Beli Kuşaklı Sırt Dekolteli Krep Tulum', Kategori: 'Tulum', Resim: 'https://www.modayakamoz.com/orj/31690-2022-05-20-08-43-26.jpeg', Fiyat: 279.9}
+      , {UrunKodu: '32689', UrunAdi: 'V Yaka Kolsuz Beli Kuşaklı Sırt Dekolteli Krep Tulum', Kategori: 'Tulum', Resim: 'https://www.modayakamoz.com/orj/31689-2022-05-20-08-42-10.jpeg', Fiyat: 279.9}
+      , {UrunKodu: '32686', UrunAdi: 'Yanları Şeritli Kaşkorse Kumaş Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31686-2022-05-20-08-22-12.jpeg', Fiyat: 129.9}
+      , {UrunKodu: '32685', UrunAdi: 'Parçalı Desen Viskon Kumaş Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31685-2022-05-20-08-11-48.jpeg', Fiyat: 109.9}
+      , {UrunKodu: '32673', UrunAdi: 'Askılı Dantel Detay Kaşkorse Standart Beden Atlet', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31673-2022-05-19-10-30-53.jpeg', Fiyat: 79.9}
+      , {UrunKodu: '32679', UrunAdi: 'Baskılı İki İplik Kumaş Takım', Kategori: 'Takım', Resim: 'https://www.modayakamoz.com/orj/31679-2022-05-20-07-24-59.jpeg', Fiyat: 259.9}
+      , {UrunKodu: '32650', UrunAdi: 'Askı Bağlamalı Sandy Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31650-2022-05-19-09-21-03.jpeg', Fiyat: 99.9}
+      , {UrunKodu: '32654', UrunAdi: 'Yaka Detay Kaşkorse Kumaş Standart Beden Elbise', Kategori: 'Elbise', Resim: 'https://www.modayakamoz.com/orj/31654-2022-05-19-09-39-24.jpeg', Fiyat: 99.9}
+      , {UrunKodu: '32639', UrunAdi: 'Dantel Omuz Baskılı Dantel Detay Viskon Bluz', Kategori: 'Bluz', Resim: 'https://www.modayakamoz.com/orj/31639-2022-05-19-08-39-07.jpeg', Fiyat: 159.9}
+          ]
 
-  for (let i = 0; i < xml.length; i++) {
-  let pusher = {}
-  let vi = xml[i].children[0].textContent;
-  let name = xml[i].children[2].textContent;
-  let kategori = xml[i].children[8].textContent;
-  let images = xml[i].children[19].children[0].textContent;
-  let fiyat = xml[i].childNodes[41].childNodes[1].childNodes[9].textContent*1
+  // for (let i = 0; i < xml.length; i++) {
+  // let pusher = {}
+  // let vi = xml[i].children[0].textContent;
+  // let name = xml[i].children[2].textContent;
+  // let kategori = xml[i].children[8].textContent;
+  // let images = xml[i].children[19].children[0].textContent;
+  // let fiyat = xml[i].childNodes[41].childNodes[1].childNodes[9].textContent*1
   
-  pusher = {UrunKodu: vi, UrunAdi: name, Kategori: kategori, Resim: images, Fiyat: fiyat}
-  productsList.push(pusher)
+  // pusher = {UrunKodu: vi, UrunAdi: name, Kategori: kategori, Resim: images, Fiyat: fiyat}
+  // productsList.push(pusher)
   
-  }
+  // }
 
   //         for(let i =1; i<xml.length; i++){
   //           let pi= xml[i].childNodes[1].textContent
@@ -137,37 +175,54 @@
   //       }  
   // })
 
-      // function elbise(){
-      //   document.querySelector('.kategoris').innerHTML = ""
-      //   for (let i = 0; i < productsList.length; i++) {
-      //     if(productsList[i].Kategori == "Elbise"){
-      //       let crtr = document.createElement("div");
-      //    crtr.setAttribute("class","col-md-3 col-sm-6 col-xs-6 col-lg-3 col-xl-3");
-      //    crtr.innerHTML = `<div class="card text-center" style="max-height: 560px; width: 18rem;"> <img src="` + productsList[i].Resim + `" class="card-img-top" max alt="..."><div class="card-body"><h5 class="card-title text-center">` + productsList[i].UrunAdi + `</h5><p class="card-text text-center">` + productsList[i].Fiyat + ` TL</p>
-      //    <a href="#" class=" btn btn-primary ">Sipariş ver!</a>
-      //  </div>
-      //  </div></div>`;
-      //  document.querySelector('.kategoris').appendChild(crtr);
-      //     }
-          
-      //   }
-      // }
 
-      // function bluz(){
-      //   document.querySelector('.kategoris').innerHTML = ""
-      //   for (let i = 0; i < productsList.length; i++) {
-      //     if(productsList[i].Kategori == "Bluz"){
-      //       let crtr = document.createElement("div");
-      //    crtr.setAttribute("class","col-md-3 col-sm-6 col-xs-6 col-lg-3 col-xl-3");
-      //    crtr.innerHTML = `<div class="card text-center" style="max-height: 560px; width: 18rem;"> <img src="` + productsList[i].Resim + `" class="card-img-top" max alt="..."><div class="card-body"><h5 class="card-title text-center">` + productsList[i].UrunAdi + `</h5><p class="card-text text-center">` + productsList[i].Fiyat + ` TL</p>
-      //    <a href="#" class=" btn btn-primary ">Sipariş ver!</a>
-      //  </div>
-      //  </div></div>`;
-      //  document.querySelector('.kategoris').appendChild(crtr);
-      //     }
+      function all(){
+        document.querySelector('.kategoris').innerHTML = ""
+        for (let i = 0; i < productsList.length; i++) {
+            let crtr = document.createElement("div");
+         crtr.setAttribute("class","col-md-6 col-sm-6 col-xs-6 col-lg-4 col-xl-3");
+         crtr.innerHTML = `<div class="card text-center" style="max-height: 560px; width: 18rem;"> <img src="` + productsList[i].Resim + `" class="card-img-top" max alt="..."><div class="card-body"><h5 class="card-title text-center">` + productsList[i].UrunAdi + `</h5><p class="card-text text-center">` + productsList[i].Fiyat + ` TL</p>
+        </div>
+       <a href="#" class=" btn btn-success">Sipariş ver!</a>
+       </div></div>`;
+       document.querySelector('.kategoris').appendChild(crtr);
+          }
           
-      //   }
-      // }
+        }
+      all();
+
+      function elbise(){
+        document.querySelector('.kategoris').innerHTML = ""
+        for (let i = 0; i < productsList.length; i++) {
+          if(productsList[i].Kategori == "Elbise"){
+            let crtr = document.createElement("div");
+         crtr.setAttribute("class","col-md-3 col-sm-6 col-xs-6 col-lg-3 col-xl-3");
+         crtr.innerHTML = `<div class="card text-center" style="height: 560px;"> <img src="` + productsList[i].Resim + `" class="card-img-top" max alt="..."><div class="card-body"><h5 class="card-title text-center">` + productsList[i].UrunAdi + `</h5><p class="card-text text-center">` + productsList[i].Fiyat + ` TL</p>
+         
+       </div>
+       <a href="#" class=" btn btn-success">Sipariş ver!</a>
+       </div></div>`;
+       document.querySelector('.kategoris').appendChild(crtr);
+          }
+          
+        }
+      }
+
+      function bluz(){
+        document.querySelector('.kategoris').innerHTML = ""
+        for (let i = 0; i < productsList.length; i++) {
+          if(productsList[i].Kategori == "Bluz"){
+            let crtr = document.createElement("div");
+         crtr.setAttribute("class","col-md-3 col-sm-6 col-xs-6 col-lg-3 col-xl-3");
+         crtr.innerHTML = `<div class="card text-center" style="max-height: 560px; width: 18rem;"> <img src="` + productsList[i].Resim + `" class="card-img-top" max alt="..."><div class="card-body"><h5 class="card-title text-center">` + productsList[i].UrunAdi + `</h5><p class="card-text text-center">` + productsList[i].Fiyat + ` TL</p>
+        </div>
+       <a href="#" class=" btn btn-success">Sipariş ver!</a>
+       </div></div>`;
+       document.querySelector('.kategoris').appendChild(crtr);
+          }
+          
+        }
+      }
 
 
       </script>
