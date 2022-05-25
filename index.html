@@ -12,9 +12,9 @@
 
 
 
-    <nav class="navbar navbar-expand-lg bg-light" style="z-index: 900;">
+    <nav class="navbar navbar-expand-lg bg-light" style="z-index: 900; padding-top: 50px;">
       <div class="container-fluid" style="margin-left: 10%; margin-right: 10%;" >
-        <a class="navbar-brand" href="#"><strong>J</strong>anes</a>
+        <a class="navbar-brand" href="#" translate="no"><strong>J</strong>anes</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,21 +24,34 @@
               <a class="nav-link active cev1" aria-current="page" href="#">Anasayfa</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link cev2" href="#">Kategoriler</a>
+              <a class="nav-link cev2" href="#" onclick="googleTranslateElementInit(ar)">Kategoriler</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle cev3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dil Ayarı <i class="fas fa-language"></i>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" id="tur"  onclick="turk()">Türkçe <img src="/tur.webp" width="18%" alt=""></a></li>
+                <!-- <li><a class="dropdown-item" id="tur"  onclick="turk(),skipper()">Türkçe <img src="/tur.webp" width="18%" alt=""></a></li>
                 <li><a class="dropdown-item"id="arabi" onclick="changer()">  عربي <img src="/arb.webp" width="18%" alt=""></a></li>
-                <li><a class="dropdown-item"id="eng"  onclick="engi()" >English <img src="/eng.webp" width="18%" alt=""></a></li>
+                <li><a class="dropdown-item"id="eng"  onclick="engi()" >English <img src="/eng.webp" width="18%" alt=""></a></li> -->
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <div id="google_translate_element"></div>
               </ul>
             </li>
             <li class="nav-item">
+
+
+              
+                            <script>function skipper() { document.querySelector(".skiptranslate").innerHTML =""};</script>              
+                            <script type="text/javascript">
+                            function googleTranslateElementInit() {
+                            new google.translate.TranslateElement(
+                            {pageLanguage: 'tr', includedLanguages: 'en,ar,ru,tr'},
+                            'google_translate_element'
+                            );
+                            }
+                            </script>
+                            <script type="text/javascript" src= "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
               <a class="nav-link disabled cev4">Disabled</a>
             </li>
           </ul>
@@ -57,6 +70,7 @@
         <div class="row" id="bir1">
           <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
             <div class="carousel-indicators">
+              
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -459,7 +473,7 @@
     
 @media screen and (min-width: 600px) {
     
-
+  body .goog-te-banner {display: none !important;}
     .navbar{
         position: fixed !important;
         background-color: rgb(255, 255, 255) !important;
@@ -786,8 +800,8 @@ button:focus{
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-sm-6 col-xs-12">
-        <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
-    <a href="#">Janes</a>.
+        <p class="copyright-text" translate="no">Copyright &copy; 2022 All Rights Reserved by 
+    <a href="#" translate="no">Janes</a>.
         </p>
       </div>
 
