@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/stil.css">
+    <!-- <link rel="stylesheet" href="/stil.css"> -->
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
 
 
     <nav class="navbar navbar-expand-lg bg-light" style="z-index: 900;">
-      <div class="container-fluid">
+      <div class="container-fluid" style="margin-left: 10%; margin-right: 10%;" >
         <a class="navbar-brand" href="#"><strong>J</strong>anes</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
               <a class="nav-link active cev1" aria-current="page" href="#">Anasayfa</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link cev2" href="#">Link</a>
+              <a class="nav-link cev2" href="#">Kategoriler</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle cev3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,27 +63,30 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="/ban.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5 class="cev6" style="font-size: 60px; border-radius: 40px 0px 40px 40px;  background-color: #fa4b4b4f;">HARİKA</h5>
-                  <p class="cev7">Bişeyler yazılır.</p>
-                </div>
+                <div style="position: relative; display: inline-block;">
+                  <img src="/b.png" class="d-block w-100" style="display: block;" alt="...">
+                  <div style="position: absolute; top: 80%; left: 50%; transform: translate( -50%, -50% );text-align: center;color: rgb(10, 10, 10);font-weight: bold;">
+                    <h3 class="cev6" style="color: rgb(255, 255, 255); border-radius: 25px;"> En Trend En Şık  </h3>
+                     <h4 class="cev7" style="font-size: 20px; background-color: #0a0a0a6e; border-radius: 25px;"> <a href="" style=" color: rgb(255, 255, 255); text-decoration: none; "> İncele </a></h4>
+                    </div>
+                   </div>
               </div>
-              <div class="carousel-item">
+              <!-- <div class="carousel-item">
                 <img src="/ban.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5 class="cev8" style="font-size: 60px; border-radius: 40px 0px 40px 40px;  background-color: #fa4b4b4f;">AWSOME</h5>
                   <p class="cev9">Some representative placeholder content for the second slide.</p>
                 </div>
-              </div>
+              </div> -->
               <div class="carousel-item">
-                
-                <img src="/ban.jpg" class="d-block w-100" alt="...">                
-                <div class="carousel-caption d-none d-md-block">
-                  <h5 class="cev10" style="font-size: 60px; border-radius: 40px 0px 40px 40px;  background-color: #fa4b4b4f;">AWSOME</h5>
-                  <p class="cev11">Some representative placeholder content for the second slide.</p>
-                </div>
-              </div>
+                <div style="position: relative; display: inline-block;">
+                  <img src="/a.png" class="d-block w-100" style="display: block;" alt="...">
+                  <div style="position: absolute; top: 80%; left: 50%; transform: translate( -50%, -50% );text-align: center;color: rgb(10, 10, 10);font-weight: bold;">
+                    <h3 class="cev10" style=""> Tarzına Işık Tut. </h3>
+                     <h4 class="cev11" style="font-size: 20px; background-color: rgba(255, 255, 255, 0.849); border-radius: 25px;"><a href="" style="text-decoration:none; color:rgb(0, 0, 0)"> İncele</a></h4>
+                    </div>
+                   </div>
+
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -180,9 +183,573 @@
 
   </div>
   </div>
+</div>
 
-    <script src="/app.js" defer></script>
+    <!-- <script src="/app.js" defer></script> -->
 
+
+    <script>
+    document.getElementById('tur').onclick = 
+      async function turk(){console.log("turk");
+      document.querySelector(".cev1").innerHTML = "Anasayfa";
+      document.querySelector(".cev2").innerHTML = "Link";
+      document.querySelector(".cev3").innerHTML = "Dil Seçenekleri";
+      document.querySelector(".cev4").innerHTML = "Kapalı";
+      document.querySelector(".cev5").innerHTML = "Ara";
+      document.querySelector(".cev6").innerHTML = "HARİKA";
+      document.querySelector(".cev7").innerHTML = "Buraya Birşeyler Yazılır.";
+      document.querySelector(".cev8").innerHTML = "awsome altı";
+      document.querySelector(".cev9").innerHTML = "awsome";
+      document.querySelector(".cev10").innerHTML = "awsome";
+      document.querySelector(".cev11").innerHTML = "awsome";
+      document.querySelector(".cev12").innerHTML = "Hemen Al!";
+      document.querySelector(".cev13").innerHTML = "En Moda Elbiseler";
+      document.querySelector(".cev14").innerHTML = "Hemen Al!";
+      document.querySelector(".cev15").innerHTML = "Modanı yansıt.";
+      document.querySelector(".cev16").innerHTML = "T-shirt";
+      document.querySelector(".cev17").innerHTML = "Yazın vazgeçilmezi.";
+      document.querySelector(".cev18").innerHTML = "Elbiseler";
+      document.querySelector(".cev19").innerHTML = "Hem rahat, hem şık.";
+      document.querySelector(".cev20").innerHTML = "Spor";
+      document.querySelector(".cev21").innerHTML = "Tarz takımlar.";
+      document.querySelector(".cev22").innerHTML = "Bluz";
+      document.querySelector(".cev23").innerHTML = "Herzaman çok iyi.";
+      document.querySelector(".cev24").innerHTML = "Abiye";
+      document.querySelector(".cev25").innerHTML = "İster gece, ister gündüz.";
+      document.querySelector(".cev26").innerHTML = "Hakkımızda";
+      document.querySelector(".cev27").innerHTML = "ABD, Avrupa veya diğer 100'den fazla ülkede En Ucuz ve En Son Moda Kadın Giyim ürünlerini çevrimiçi toptan satış yapmak ister misiniz? İster bir butik mağaza, ister çevrimiçi perakendeci olun, klasikten modayı takip eden tarzlara, resmi işlerden gündelik tarzlara, Janes'de 50.000'den fazla benzersiz ve modaya uygun bayan giyim tarzı, toplu satın alma için ilk tercihiniz olacak! En iyi satıcı olarak, her mevsime veya duruma uygun en yeni şık kadın kıyafetlerini toptan satışa sunuyoruz. Yaza gelindiğinde kadın giyim pazarında en çok ne konuşuluyor? Seksi Mayo vazgeçilmezdir. Klasik Tek Parçalar veya Örtüler, Bikiniler, hatta Büyük Beden Mayoların tümü web sitelerimizde mevcuttur. Plaj Giysileri ve Mayoların tüm günlük güncellemeleri, trend stilleri, renkleri ve boyutları işletmenizi tatmin edecek. Çiçek Desenli Elbise veya Gömlek Elbise de yaz tutkusuna çok yakışıyor. Müşterinizin özel bir etkinliğe katılması gerekiyorsa, ona zarif bir Abiye veya şık bir Parti Elbisesi sunun. Bunun yanı sıra gündelik kadın giyimi de oldukça popülerdir. Hem Kabarık Kol Bayan Üstler, İş Butik Bluzlar, Baskı T-shirt, hem de Şeffaf Kumaş Bayan Spor Sütyen veya Şortlar, Janes'de en son stilleri toptan tek elden yapabilirsiniz.";
+      document.querySelector(".cev28").innerHTML = "Kategoriler";
+      document.querySelector(".cev29").innerHTML = "Bluz";
+      document.querySelector(".cev30").innerHTML = "Pantolon";
+      document.querySelector(".cev31").innerHTML = "Elbise";
+      document.querySelector(".cev32").innerHTML = "Takım";
+      document.querySelector(".cev33").innerHTML = "Bağlantılar";
+      
+      
+      
+      
+      
+      
+      }
+      
+      document.getElementById('eng').onclick = 
+      async function engi(){console.log("eng");
+      document.querySelector(".cev1").innerHTML = "Home";
+      document.querySelector(".cev2").innerHTML = "Link";
+      document.querySelector(".cev3").innerHTML = "Language";
+      document.querySelector(".cev4").innerHTML = "Disabled";
+      document.querySelector(".cev5").innerHTML = "Search";
+      document.querySelector(".cev6").innerHTML = "AWESOME";
+      document.querySelector(".cev7").innerHTML = "something";
+      document.querySelector(".cev8").innerHTML = "awsome altı";
+      document.querySelector(".cev9").innerHTML = "awsome";
+      document.querySelector(".cev10").innerHTML = "awsome";
+      document.querySelector(".cev11").innerHTML = "awsome";
+      document.querySelector(".cev12").innerHTML = "Shop Now!";
+      document.querySelector(".cev13").innerHTML = "Trend dress";
+      document.querySelector(".cev14").innerHTML = "Shop Now!";
+      document.querySelector(".cev15").innerHTML = "Reflect your style.";
+      document.querySelector(".cev16").innerHTML = "T-shirt";
+      document.querySelector(".cev17").innerHTML = "Summer essentials.";
+      document.querySelector(".cev18").innerHTML = "Dresses";
+      document.querySelector(".cev19").innerHTML = "Comfortable and stylish.";
+      document.querySelector(".cev20").innerHTML = "Spor";
+      document.querySelector(".cev21").innerHTML = "Style suits";
+      document.querySelector(".cev22").innerHTML = "Blouse";
+      document.querySelector(".cev23").innerHTML = "Always in style.";
+      document.querySelector(".cev24").innerHTML = "Evening dresses";
+      document.querySelector(".cev25").innerHTML = "Even in day.";
+      document.querySelector(".cev26").innerHTML = "Abaout us";
+      document.querySelector(".cev27").innerHTML = "Want to wholesale Cheapest and Latest Fashion Women's Clothing online in USA, Europe or other 100+ countries? Whether you're a boutique store or an online retailer, from classic to trendy, formal to casual, over 50,000 unique and trendy women's clothing styles at Janes will be your first choice for bulk buying! As a best seller, we wholesale the latest stylish women's clothing suitable for any season or occasion. When it comes to summer, what is the most talked about women's clothing market? Sexy Swimwear is indispensable. Classic One Pieces or Cover ups, Bikinis, even Plus Size Swimwear are all available on our websites. All daily updates of Beachwear and Swimwear, trending styles, colors and sizes will satisfy your business. Floral Patterned Dress or Shirt Dress is also very suitable for summer passion. If your client needs to attend a special event, offer them an elegant Evening Dress or an elegant Party Dress. In addition, casual women's clothing is also very popular. Both the Puffy Sleeve Women's Tops, Business Boutique Blouses, Print T-shirt, and Sheer Fabric Women's Sports Bra or Shorts, you can wholesale the latest styles at Janes one-stop.";
+      document.querySelector(".cev28").innerHTML = "Categories";
+      document.querySelector(".cev29").innerHTML = "Blouse";
+      document.querySelector(".cev30").innerHTML = "Pants";
+      document.querySelector(".cev31").innerHTML = "Dresses";
+      document.querySelector(".cev32").innerHTML = "Spor";
+      document.querySelector(".cev33").innerHTML = "Quick Links";
+      
+      
+      
+      
+      
+      
+      }
+      
+      document.getElementById('arabi').onclick = 
+      async function changer(){console.log("arabi");
+      document.querySelector(".cev1").innerHTML = "الصفحة الرئيسية";
+      document.querySelector(".cev2").innerHTML = "وصلة";
+      document.querySelector(".cev3").innerHTML = "لغة";
+      document.querySelector(".cev4").innerHTML = "معاق";
+      document.querySelector(".cev5").innerHTML = "بحث";
+      document.querySelector(".cev6").innerHTML = "مدهش";
+      document.querySelector(".cev7").innerHTML = "شيئا ما";
+      document.querySelector(".cev8").innerHTML = "arapça";
+      document.querySelector(".cev9").innerHTML = "arapça";
+      document.querySelector(".cev10").innerHTML = "awsome";
+      document.querySelector(".cev11").innerHTML = "awsome";
+      document.querySelector(".cev12").innerHTML = "تسوق الآن!";
+      document.querySelector(".cev13").innerHTML = "فستان الاتجاه";
+      document.querySelector(".cev14").innerHTML = "تسوق الآن!";
+      document.querySelector(".cev15").innerHTML = "تعكس أسلوبك.";
+      document.querySelector(".cev16").innerHTML = "تي شيرت";
+      document.querySelector(".cev17").innerHTML = "أساسيات الصيف";
+      document.querySelector(".cev18").innerHTML = "فساتين";
+      document.querySelector(".cev19").innerHTML = "مريح وأنيق.";
+      document.querySelector(".cev20").innerHTML = "سبور";
+      document.querySelector(".cev21").innerHTML = "يناسب الاسلوب";
+      document.querySelector(".cev22").innerHTML = "بلوزة";
+      document.querySelector(".cev23").innerHTML = "دائما في الاسلوب.";
+      document.querySelector(".cev24").innerHTML = "فساتين السهرة";
+      document.querySelector(".cev25").innerHTML = "حتى في النهار.";
+      document.querySelector(".cev26").innerHTML = "معلومات عنا";
+      document.querySelector(".cev27").innerHTML = "هل ترغب في بيع ملابس نسائية بأرخص وأحدث صيحات الموضة بالجملة عبر الإنترنت في الولايات المتحدة الأمريكية أو أوروبا أو أكثر من 100 دولة أخرى؟ سواء كنت متجرًا بوتيكًا أو بائع تجزئة عبر الإنترنت ، من كلاسيكي إلى عصري ، رسمي إلى غير رسمي ، فإن أكثر من 50000 من أنماط الملابس النسائية العصرية والفريدة من نوعها في جينيس ستكون خيارك الأول للشراء بالجملة! كأفضل بائع ، نقوم بالجملة بأحدث الملابس النسائية الأنيقة المناسبة لأي موسم أو مناسبة. عندما يتعلق الأمر بالصيف ، ما هو أكثر ما يتم الحديث عنه في سوق الملابس النسائية؟ ملابس السباحة مثير لا غنى عنها. البيكينيات ، البيكينيات ، وحتى ملابس السباحة ذات المقاسات الكبيرة ، كلها متاحة على مواقعنا الإلكترونية. جميع التحديثات اليومية لملابس البحر وملابس السباحة والأنماط والألوان والأحجام الشائعة سترضي عملك. فستان مزخرف بالزهور أو فستان القميص مناسب أيضًا لشغف الصيف. إذا كان عميلك بحاجة إلى حضور مناسبة خاصة ، فقدم له فستان سهرة أنيقًا أو فستان حفلة أنيق. بالإضافة إلى ذلك ، تحظى الملابس النسائية غير الرسمية بشعبية كبيرة أيضًا. كل من بلوزات Puffy Sleeve النسائية ، وبلوزات Business Boutique ، والقميص المطبوع ، وحمالة صدر أو شورت رياضي نسائي من القماش الشفاف ، يمكنك بيع أحدث الأساليب في Janes one-stop بالجملة.";
+      document.querySelector(".cev28").innerHTML = "فئات";
+      document.querySelector(".cev29").innerHTML = "بلوزة";
+      document.querySelector(".cev30").innerHTML = "بنطال";
+      document.querySelector(".cev31").innerHTML = "فساتين";
+      document.querySelector(".cev32").innerHTML = "سبور";
+      document.querySelector(".cev33").innerHTML = "الروابط";
+      
+      
+      
+      }
+      
+      
+                                        const leftSlide = document.querySelector(".left-slides");
+                                        const slidesLength = leftSlide.querySelectorAll("div").length; 
+                                    const rightSlide = document.querySelector(".right-slides");
+                                    const leftBtn = document.querySelector(".left-btn");
+                                    const rightBtn = document.querySelector(".right-btn");
+      
+      
+                                    let currentSlide = 0;
+      
+                                    rightSlide.style.transform = `translateY(-${(slidesLength - 1) * 100}%)`;
+      
+                                    leftBtn.addEventListener("click", () => changeSlide("left"));
+                                    rightBtn.addEventListener("click", () => changeSlide("right"));
+      
+                                    function changeSlide(btn) {
+                                      if (btn == "right") {
+                                        currentSlide++;
+      
+                                        if (currentSlide > slidesLength - 1) {
+                                          currentSlide = 0;
+                                        }
+                                      } else if (btn == "left") {
+                                        currentSlide--;
+      
+                                        if (currentSlide < 0) {
+                                          currentSlide = slidesLength - 1;
+                                        }
+                                      }
+      
+                                      rightSlide.style.transform = `translateY(-${
+                                        (slidesLength - 1 - currentSlide) * 100
+                                      }%)`;
+                                      leftSlide.style.transform = `translateY(-${currentSlide * 100}%)`;
+                                    }
+      
+                                    setInterval(autoChangeSlide, 3000);
+      
+                                    function autoChangeSlide() {
+      
+                                      currentSlide++;
+      
+                                      if (currentSlide > slidesLength - 1) {
+                                        currentSlide = 0;
+                                      }
+      
+                                      rightSlide.style.transform = `translateY(-${
+                                        (slidesLength - 1 - currentSlide) * 100
+                                      }%)`;
+                                      leftSlide.style.transform = `translateY(-${currentSlide * 100}%)`;
+                                    }
+      // let urun = []
+      // let xml
+      // fetch("http://modayakamoz.com/xml/sena")
+      // .then(res=>res.text())
+      // .then(data=>{
+      //   let parser = new DOMParser();
+      //   xml = parser.parseFromString(data, "application/xml");
+      
+      //   xml = xml.getElementsByTagName("Urun");
+      //   for(let i =1; i<xml.length; i++){
+      //     let pi= xml[i].childNodes[1].textContent
+      //     let pii = xml[i].childNodes[39].childNodes[1].textContent
+      //     let piii = xml[i].childNodes[3].textContent
+      //     let piiii = xml[1].childNodes[41].childNodes[1].childNodes[9].textContent*1
+      
+      //   urun.push({stok:pi, urunadi:piii, resim:pii, fiyat: piiii })
+      //   localStorage.setItem("urun", JSON.stringify(urun))
+      // }
+        
+      
+        
+      //   })
+      
+      
+      productsList = []
+      
+      for (let i = 0; i < xml.length; i++) {
+        let pusher = {}
+        let vi = xml[1].children[0].textContent;
+        let name = xml[1].children[2].textContent;
+        let kategori = xml[1].children[8].textContent;
+        let images = xml[1].children[19].children[0].textContent;
+        
+        pusher = {UrunKodu: vi, UrunAdi: name, Kategori: kategori, Resim: images}
+        productsList.push(pusher)
+        
+      }
+      </script>
+
+
+  <style>
+    @media screen and (max-width: 600px) {
+#serb{
+    width: 140px important;
+    }
+    .card{
+        width: 300px !important;
+    }
+
+    .left-slides{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 45%;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .dropdown-menu>li>a>img {
+      width: 5%;
+    };
+    .navbar{
+
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1;
+
+    }
+    .carousel{
+        margin-top: 75px !important;
+    }
+
+    .absol{
+        position:absolute !important; ;
+    }
+    .yazisi{
+        position: absolute;
+         top:50% !important; 
+         left:8% !important;
+    }
+    .yazisin{
+        font-size: 20px;
+        border-radius: 40px 0px 40px 40px;
+        background-color: #fa4b4b4f;
+        width: 80%;
+    }
+}
+    
+@media screen and (min-width: 600px) {
+    
+
+    .navbar{
+        position: fixed !important;
+        background-color: rgb(255, 255, 255) !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1;
+    }
+
+#serb{
+    width: 100%;
+    }
+
+}
+
+
+.col-sm-6 {
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+
+:root{
+    --primary-color : #1dd1a1;
+    --active-color : #2ecc71;
+
+}
+
+
+
+.slider-container{
+    height: 75vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative; 
+    color: #fff;
+}
+
+.left-slides{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.right-slides{
+    position: absolute;
+    left: 35%;
+    top: 0;
+    width: 65%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.left-slides > div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-slides h3{
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.left-slides p{
+    font-size: 1.5rem;
+}
+
+.right-slides > div{
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+button{
+
+}
+
+.slider-container button{
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    font-size: 1.5rem;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: #444;
+}
+
+button:hover{
+    opacity: 0.9;
+}
+
+button:focus{
+    outline: none;
+}
+
+.slider-container .left-btn{
+    transform: translateX(-100%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.slider-container .right-btn{
+    transform: translateY(-100%);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+/* footer */
+
+.site-footer
+{
+    margin-top: 20px;
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#f15c5c
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+  </style>
 
 
 <footer class="site-footer" >

@@ -11,8 +11,7 @@
     <script src="https://kit.fontawesome.com/3569aa9baa.js" crossorigin="anonymous"></script>
 
 
-
-    <nav class="navbar navbar-expand-lg bg-light" style="z-index: 900;">
+    <nav class="navbar navbar-expand-lg bg-light" style="z-index: 900; ">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><strong>J</strong>anes</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,10 +52,12 @@
     <link href="https:cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
   <body>
-<div class="container mt-5 ">
-  <button type="button" class="btn btn-primary btn-lg text-center mt-5" onclick="elbise()">Elbiseler</button>  <button type="button" class="btn btn-primary btn-lg text-center mt-5" onclick="bluz()">Bluzler</button>
+<div class="container mt-5  ">
 
-  <div class="row mt-5 kategoris" >
+
+  <button type="button" class="btn btn-primary btn-lg  mt-5" onclick="elbise('Elbise')">Elbiseler</button>  <button type="button" class="btn btn-primary btn-lg text-center mt-5" onclick="elbise('Bluz')">Bluzler</button>
+  
+  <div class="row mt-5 kategoris">
 
 </div>  
 </div>     
@@ -191,40 +192,23 @@
         }
       all();
 
-      function elbise(){
+      function elbise(x){
         document.querySelector('.kategoris').innerHTML = ""
         for (let i = 0; i < productsList.length; i++) {
-          if(productsList[i].Kategori == "Elbise"){
+          if(productsList[i].Kategori == x){
             let crtr = document.createElement("div");
          crtr.setAttribute("class","col-md-3 col-sm-6 col-xs-6 col-lg-3 col-xl-3");
          crtr.innerHTML = `<div class="card text-center" style="height: 560px;"> <img src="` + productsList[i].Resim + `" class="card-img-top" max alt="..."><div class="card-body"><h5 class="card-title text-center">` + productsList[i].UrunAdi + `</h5><p class="card-text text-center">` + productsList[i].Fiyat + ` TL</p>
          
        </div>
        <a href="#" class=" btn btn-success">Sipariş ver!</a>
-       </div></div>`;
+       </div></div>
+       `;
        document.querySelector('.kategoris').appendChild(crtr);
           }
           
         }
       }
-
-      function bluz(){
-        document.querySelector('.kategoris').innerHTML = ""
-        for (let i = 0; i < productsList.length; i++) {
-          if(productsList[i].Kategori == "Bluz"){
-            let crtr = document.createElement("div");
-         crtr.setAttribute("class","col-md-3 col-sm-6 col-xs-6 col-lg-3 col-xl-3");
-         crtr.innerHTML = `<div class="card text-center" style="max-height: 560px; width: 18rem;"> <img src="` + productsList[i].Resim + `" class="card-img-top" max alt="..."><div class="card-body"><h5 class="card-title text-center">` + productsList[i].UrunAdi + `</h5><p class="card-text text-center">` + productsList[i].Fiyat + ` TL</p>
-        </div>
-       <a href="#" class=" btn btn-success">Sipariş ver!</a>
-       </div></div>`;
-       document.querySelector('.kategoris').appendChild(crtr);
-          }
-          
-        }
-      }
-
-
       </script>
 
 
