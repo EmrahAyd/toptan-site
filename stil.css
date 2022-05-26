@@ -1,3 +1,8 @@
+@media screen and (max-width: 1600px) {
+  .kate{
+    display: none;
+  }
+}
 @media screen and (max-width: 600px) {
 #serb{
     width: 140px important;
