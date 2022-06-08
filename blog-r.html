@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <style>
+       @import "https://unpkg.com/open-props";
+       @import "https://unpkg.com/open-props/normalize.min.css";
+
+* {
+ box-sizing: border-box;
+}
+ 
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: var(--gradient-9);
+}
+
+:root {
+  --magnifier: 6;
+  --gap: 1vmin;
+  --transition: 0.5s;
+}
+  
+.container {
+  width: 80vw;
+  height: 50vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+img {
+  --brightness: 0.75;
+  --grayscale: 1;
+  transition: flex var(--transition), filter var(--transition);
+  height: 100%;
+  filter: grayscale(var(--grayscale)) brightness(var(--brightness));
+  object-fit: cover;
+  overflow: hidden;
+  flex: 1;
+}
+
+img:hover {
+  --brightness: 1.15;
+  --grayscale: 0;
+  flex: var(--magnifier);
+}
+  </style>
+<div class="container"><img src="https://source.unsplash.com/random/600x600?bear,seed=0"/><img src="https://source.unsplash.com/random/600x600?bear,seed=100"/><img src="https://source.unsplash.com/random/600x600?bear,seed=200"/><img src="https://source.unsplash.com/random/600x600?bear,seed=300"/><img src="https://source.unsplash.com/random/600x600?bear,seed=400"/>
+</div>
+</body>
+</html>

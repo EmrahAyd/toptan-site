@@ -11,16 +11,16 @@
     <script src="https://kit.fontawesome.com/3569aa9baa.js" crossorigin="anonymous"></script>
 
 
-    <nav class="navbar navbar-expand-lg bg-light" style="z-index: 900; ">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><strong>J</strong>anes</a>
+    <nav class="navbar navbar-expand-lg bg-light" style="z-index: 900; padding-top: 50px;">
+      <div class="container-fluid" style="margin-left: 10%; margin-right: 10%;" >
+        <a class="navbar-brand" href="#" translate="no"><strong>J</strong>anes</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active cev1" aria-current="page" href="#">Anasayfa</a>
+              <a class="nav-link active cev1" aria-current="page" href="/index.html">Anasayfa</a>
             </li>
             <li class="nav-item">
               <a class="nav-link cev2" href="#">Link</a>
@@ -30,15 +30,24 @@
                 Dil Ayarı <i class="fas fa-language"></i>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" id="tur"  onclick="turk()">Türkçe <img src="/tur.webp" width="18%" alt=""></a></li>
+                <!-- <li><a class="dropdown-item" id="tur"  onclick="turk(),skipper()">Türkçe <img src="/tur.webp" width="18%" alt=""></a></li>
                 <li><a class="dropdown-item"id="arabi" onclick="changer()">  عربي <img src="/arb.webp" width="18%" alt=""></a></li>
-                <li><a class="dropdown-item"id="eng"  onclick="engi()" >English <img src="/eng.webp" width="18%" alt=""></a></li>
+                <li><a class="dropdown-item"id="eng"  onclick="engi()" >English <img src="/eng.webp" width="18%" alt=""></a></li> -->
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <div id="google_translate_element"></div>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled cev4">Disabled</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active cev3" href="/urunler.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Kategoriler </i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/urunler.html" id="elbis" onclick="elbise('Elbise')">Elbiseler</a></li>
+                <li><a class="dropdown-item" href="/urunler.html" id="arabi" onclick="elbise('Bluz')"> Bluzlar</a></li>
+                <li><a class="dropdown-item" href="/urunler.html" id="eng"  onclick="elbise('Takım')">Takım</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/urunler.html" onclick="alli()">Hepsini göster </a></li>
+              </ul>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -52,12 +61,21 @@
     <link href="https:cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
   <body>
+    <div class="row">
+      <div class="col-sm-1 kate" >
+        <div style="position: fixed; top: 30%; left: 7%; transform: translate( -50%, -50% );text-align: center;color: rgb(10, 10, 10);font-weight: bold;"> Kategoriler <br>
+        <button type="button" class="btn  btn-lg  mt-2" onclick="elbise('Elbise')">Elbiseler</button> <br>
+        <button type="button" class="btn btn-lg text-center mt-2" onclick="elbise('Bluz')">Bluzler</button> <br>
+        <button type="button" class="btn btn-lg text-center mt-2" onclick="elbise('Takım')">Takım</button> <br>
+      </div>
+      </div>    
+    </div>
+    <div class="row"  style="padding-top: 30px !important;">
+
+    </div>
 <div class="container mt-5  ">
 
-
-  <button type="button" class="btn btn-primary btn-lg  mt-5" onclick="elbise('Elbise')">Elbiseler</button>  <button type="button" class="btn btn-primary btn-lg text-center mt-5" onclick="elbise('Bluz')">Bluzler</button>
-  
-  <div class="row mt-5 kategoris">
+  <div class="row kategoris" >
 
 </div>  
 </div>     
@@ -177,7 +195,7 @@
   // })
 
 
-      function all(){
+      function alli(){
         document.querySelector('.kategoris').innerHTML = ""
         for (let i = 0; i < productsList.length; i++) {
             let crtr = document.createElement("div");
@@ -190,11 +208,23 @@
           }
           
         }
-      all();
+      alli();
 
       function elbise(x){
         document.querySelector('.kategoris').innerHTML = ""
         for (let i = 0; i < productsList.length; i++) {
+          if(productsList[i].Kategori == "all"){
+            let crtr = document.createElement("div");
+         crtr.setAttribute("class","col-md-3 col-sm-6 col-xs-6 col-lg-3 col-xl-3");
+         crtr.innerHTML = `<div class="card text-center" style="height: 560px;"> <img src="` + productsList[i].Resim + `" class="card-img-top" max alt="..."><div class="card-body"><h5 class="card-title text-center">` + productsList[i].UrunAdi + `</h5><p class="card-text text-center">` + productsList[i].Fiyat + ` TL</p>
+         
+       </div>
+       <a href="#" class=" btn btn-success">Sipariş ver!</a>
+       </div></div>
+       `;
+       document.querySelector('.kategoris').appendChild(crtr);
+          
+          }
           if(productsList[i].Kategori == x){
             let crtr = document.createElement("div");
          crtr.setAttribute("class","col-md-3 col-sm-6 col-xs-6 col-lg-3 col-xl-3");
